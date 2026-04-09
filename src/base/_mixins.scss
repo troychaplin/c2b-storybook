@@ -1,0 +1,15 @@
+/// Min-width media query.
+/// @param {Number} $width - Breakpoint value (e.g., 601px)
+@mixin above($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+/// Max-width media query.
+/// @param {Number} $width - Breakpoint value (e.g., 600px)
+@mixin below($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

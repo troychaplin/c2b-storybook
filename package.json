@@ -1,0 +1,99 @@
+{
+  "name": "@troychaplin/c2b-storybook",
+  "version": "0.1.0",
+  "description": "React component library and design system for Carleton University",
+  "type": "module",
+  "private": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./styles": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "storybook dev -p 6006 --no-open",
+    "build": "vite build",
+    "build-storybook": "storybook build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:storybook": "vitest --project=storybook",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write 'src/**/*.{ts,tsx,scss}'",
+    "format:check": "prettier --check 'src/**/*.{ts,tsx,scss}'",
+    "typecheck": "tsc --noEmit",
+    "size": "size-limit",
+    "size:check": "size-limit --limit",
+    "prepare": "husky"
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.mjs",
+      "limit": "10 kB"
+    },
+    {
+      "path": "dist/style.css",
+      "limit": "10 kB"
+    }
+  ],
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "keywords": [
+    "react",
+    "component-library",
+    "design-system",
+    "carleton",
+    "storybook"
+  ],
+  "author": "Carleton University",
+  "license": "MIT",
+  "packageManager": "pnpm@10.33.0",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^5.1.1",
+    "@eslint/js": "^9.39.4",
+    "@size-limit/file": "^12.0.1",
+    "@storybook/addon-a11y": "^10.3.5",
+    "@storybook/addon-docs": "^10.3.5",
+    "@storybook/addon-vitest": "^10.3.5",
+    "@storybook/react-vite": "^10.3.5",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^18.3.28",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/browser-playwright": "4.1.3",
+    "@vitest/coverage-v8": "4.1.3",
+    "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-storybook": "^10.3.5",
+    "husky": "^9.1.7",
+    "modern-normalize": "^3.0.1",
+    "playwright": "^1.59.1",
+    "prettier": "^3.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sass": "^1.99.0",
+    "size-limit": "^12.0.1",
+    "storybook": "^10.3.5",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.1",
+    "vite": "^8.0.7",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^4.1.3"
+  }
+}
